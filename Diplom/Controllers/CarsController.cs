@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Diplom.Data;
 using Diplom.Models.Tables;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Diplom.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CarsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -79,7 +81,7 @@ namespace Diplom.Controllers
             {
                 _context.Add(cars);
                 await _context.SaveChangesAsync();
-                return RedirectToRoute("default", new { controller = "Organizations", action = $"Index" });
+                return RedirectToRoute("default", new { controller = "Cars", action = $"Index", id=cars.OrganizationId });
             }
             ViewData["OrganizationId"] = new SelectList(_context.Organizations, "Id", "Address", cars.OrganizationId);
             return View(cars);

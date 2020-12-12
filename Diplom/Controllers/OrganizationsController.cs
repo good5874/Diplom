@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Diplom.Data;
 using Diplom.Models.Tables;
+using Microsoft.AspNetCore.Authorization;
+using Diplom.Data.StoredProcedures;
 
 namespace Diplom.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class OrganizationsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -139,15 +142,19 @@ namespace Diplom.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var organizations = await _context.Organizations.FindAsync(id);
-            _context.Organizations.Remove(organizations);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            StoredProcedures.DeleteOrganization(_context, id);
+
+            //var organizations = await _context.Organizations.FindAsync(id);
+            //_context.Organizations.Remove(organizations);
+            //await _context.SaveChangesAsync();
+            return Redirect("~/Identity/Account/Manage/Index");
+
+            //return RedirectToAction(nameof(Index));
         }
 
         private bool OrganizationsExists(int id)
         {
             return _context.Organizations.Any(e => e.Id == id);
-        }      
+        }
     }
 }

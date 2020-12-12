@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Diplom.Models.Tables;
 using Diplom.ViewsModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diplom.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;

@@ -26,6 +26,10 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
 
         public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
+        public static string Job => "Job";
+        public static string Driver => "Driver";
+        public static string Manager => "Manager";
+
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
         public static string EmailNavClass(ViewContext viewContext) => PageNavClass(viewContext, Email);
@@ -43,6 +47,11 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
         public static string PersonalDataNavClass(ViewContext viewContext) => PageNavClass(viewContext, PersonalData);
 
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
+
+        public static string JobNavClass(ViewContext viewContext) => PageNavClass(viewContext, Job);
+        public static string DriverNavClass(ViewContext viewContext) => PageNavClass(viewContext, Driver);
+        public static string ManagerNavClass(ViewContext viewContext) => PageNavClass(viewContext, Manager);
+
 
         private static string PageNavClass(ViewContext viewContext, string page)
         {

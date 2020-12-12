@@ -1,24 +1,18 @@
 ﻿@model Diplom.Models.Tables.Employees
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "CreateManager";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>CreateManager</h1>
 
 <h4>Employees</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="CreateManager">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="EmploymentDate" class="control-label"></label>
-                <input asp-for="EmploymentDate" class="form-control" />
-                <span asp-validation-for="EmploymentDate" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="PasportData" class="control-label"></label>
                 <input asp-for="PasportData" class="form-control" />
@@ -42,10 +36,14 @@
             <div class="form-group">
                 <label asp-for="OrganizationId" class="control-label"></label>
                 <select asp-for="OrganizationId" class="form-control" asp-items="ViewBag.OrganizationId"></select>
-                <span asp-validation-for="OrganizationId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="Manager.Education" class="control-label"></label>
+                <input asp-for="Manager.Education" class="form-control" />
+                <span asp-validation-for="Manager.Education" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CreateManager" class="btn btn-primary" />
             </div>
         </form>
     </div>

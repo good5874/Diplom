@@ -1,0 +1,10 @@
+﻿@page
+@model Diplom.Areas.Identity.Pages.Account.Manage.JobVacancyModel
+
+@inject SignInManager<Users> SignInManager
+@{
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item"><a class="nav-link @ManageNavPages.DriverNavClass(ViewContext)" id="driver" asp-controller="Employees" asp-action="Create" asp-route-titleJob="driver">Driver</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.ManagerNavClass(ViewContext)" id="manager" asp-controller="Employees" asp-action="Create" asp-route-titleJob="manager">Manager</a></li>
+    </ul>
+}

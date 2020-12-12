@@ -6,7 +6,11 @@ namespace Diplom.Models.Tables
 {
     public partial class Users : IdentityUser
     {
-        public Users()
+        public Users() : base()
+        {
+
+        }
+        public Users(string name) : base(name)
         {
 
         }

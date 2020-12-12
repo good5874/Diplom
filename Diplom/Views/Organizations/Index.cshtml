@@ -5,12 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Organizacions</h1>
+<table class="navbar-nav flex-grow-1">
+    <thead>
+        <tr>
+            <th class="nav-item">
+                <a asp-action="Create">Create organizacion |</a>
+            <th>
+            <th class="nav-item">
+                <a asp-controller="Cars" asp-action="Index">Cars |</a>
+            <th>
+            <th class="nav-item">
+                <a asp-controller="Employees" asp-action="Index">Employees</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+</table>
 
-<p>
-    <a asp-action="Create">Create New</a>
-    <a asp-controller="Cars" asp-action="Index">Машины</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -30,27 +42,28 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNamber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNamber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

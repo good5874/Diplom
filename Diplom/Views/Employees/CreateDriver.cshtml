@@ -1,7 +1,7 @@
 ﻿@model Diplom.Models.Tables.Employees
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "CreateDriver";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,8 +11,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
+        <form asp-action="CreateDriver">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="PasportData" class="control-label"></label>
                 <input asp-for="PasportData" class="form-control" />
@@ -48,13 +48,9 @@
                 <span asp-validation-for="Driver.DrivingExperience" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="CreateDriver" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Diplom.Models.Tables;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,9 +10,8 @@ namespace Diplom.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        : base(options)
         {
             Database.EnsureCreated();
         }
@@ -32,7 +32,7 @@ namespace Diplom.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Diplom1;Trusted_Connection=False;MultipleActiveResultSets=true;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Trusted_Connection=False;MultipleActiveResultSets=true;");
             }
         }
 
@@ -48,6 +48,7 @@ namespace Diplom.Data
                     .WithMany()
                     .HasForeignKey(d => d.CarId)
                     .HasConstraintName("FK_CarOrder_Cars");
+
 
                 entity.HasOne(d => d.Order)
                     .WithMany()
@@ -204,7 +205,6 @@ namespace Diplom.Data
             modelBuilder.Entity<Organizations>(entity =>
             {
                 entity.Property(e => e.Address).IsRequired();
-
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);
