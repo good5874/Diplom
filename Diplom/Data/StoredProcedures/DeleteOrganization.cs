@@ -18,8 +18,8 @@ namespace Diplom.Data.StoredProcedures
                 {
                     organizationId = c.Id,
                     employee = c.Employees.Where(o => o.OrganizationId == indexDel),
-                    driver = c.Employees.Where(o=>o.Driver.Id != null).Select(o=>o.Driver),
-                    manager = c.Employees.Where(o=>o.Manager.Id != null).Select(o => o.Manager),
+                    driver = c.Employees.Where(o => o.Driver.Id != null).Select(o => o.Driver),
+                    manager = c.Employees.Where(o => o.Manager.Id != null).Select(o => o.Manager),
                     cars = c.Cars
                 })
                 .FirstOrDefault();
@@ -53,6 +53,9 @@ namespace Diplom.Data.StoredProcedures
 
             applicationDbContext.SaveChanges();
         }
-    }
+        public static async void DeleteOrder(ApplicationDbContext applicationDbContext, int indexDel)
+        {
 
+        }
+    }
 }

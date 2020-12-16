@@ -29,6 +29,11 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
         public static string Job => "Job";
         public static string Driver => "Driver";
         public static string Manager => "Manager";
+        public static string Cargo => "Cargo";
+        public static string CustromerOrders => "CustromerOrders";
+        public static string StoreOrders => "StoreOrders";
+        public static string ManagerOrders => "ManagerOrders";
+        public static string DriverOrders => "DriverOrders";
 
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
@@ -51,6 +56,11 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
         public static string JobNavClass(ViewContext viewContext) => PageNavClass(viewContext, Job);
         public static string DriverNavClass(ViewContext viewContext) => PageNavClass(viewContext, Driver);
         public static string ManagerNavClass(ViewContext viewContext) => PageNavClass(viewContext, Manager);
+        public static string CargoNavClass(ViewContext viewContext) => PageNavClass(viewContext, Cargo);
+        public static string CustoromerOrdersNavClass(ViewContext viewContext) => PageNavClass(viewContext, CustromerOrders);
+        public static string StoreOrdersNavClass(ViewContext viewContext) => PageNavClass(viewContext, StoreOrders);
+        public static string ManagerOrdersNavClass(ViewContext viewContext) => PageNavClass(viewContext, ManagerOrders);
+        public static string DriverOrdersNavClass(ViewContext viewContext) => PageNavClass(viewContext, DriverOrders);
 
 
         private static string PageNavClass(ViewContext viewContext, string page)

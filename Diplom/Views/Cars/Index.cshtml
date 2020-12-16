@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Diplom.Models.Tables.Cars>
+﻿@using Diplom.ViewsModels
+@model IEnumerable<Diplom.Models.Tables.Cars>
 
 @{
     ViewData["Title"] = "Index";
@@ -20,10 +21,10 @@
                 @Html.DisplayNameFor(model => model.CarBrand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CarringCapacity)
+                @Html.Name(UnitsModel.CarringCapacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BodyVolume)
+                @Html.Name(UnitsModel.BodyVolume)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Organization)
@@ -32,29 +33,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StateNamber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarBrand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarringCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BodyVolume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Organization.Address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StateNamber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarBrand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarringCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BodyVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organization.Address)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

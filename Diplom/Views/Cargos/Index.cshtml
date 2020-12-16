@@ -1,0 +1,50 @@
+﻿@using Diplom.ViewsModels
+@model IEnumerable<Diplom.Models.Tables.Cargos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>My cargos</h1>
+
+<p>
+    <a asp-action="Create">Create cargo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.Name(UnitsModel.Weight)
+            </th>
+            <th>
+                @Html.Name(UnitsModel.CargoVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfCargo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfCargo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

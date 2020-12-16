@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Diplom.Models.Tables.Orders>
+
+@{
+    ViewData["Title"] = "Store orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Store orders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo.TypeOfCargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTheContract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateLoading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateUnloading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationLoading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationUnloading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.Cargo.TypeOfCargo)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfTheContract)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateLoading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateUnloading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationLoading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationUnloading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.User.Email)
+            </td>
+            <td>
+                <a asp-action="PickUpTheOrder" asp-route-id="@item.Id">Pick up the order</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

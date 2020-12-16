@@ -5,16 +5,17 @@ namespace Diplom.Models.Tables
 {
     public partial class Cargos
     {
+        public Cargos()
+        {
+            Orders = new HashSet<Orders>();
+        }
         public int Id { get; set; }
-        public string LocationLoading { get; set; }
-        public string LocationUnloading { get; set; }
         public int Weight { get; set; }
-        public int CargoVolum { get; set; }
-        public string Status { get; set; }
+        public int CargoVolume { get; set; }
+        public string TypeOfCargo { get; set; }
         public string CustomersId { get; set; }
-        public int? OrderId { get; set; }
 
         public virtual Customers Customers { get; set; }
-        public virtual Orders Order { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

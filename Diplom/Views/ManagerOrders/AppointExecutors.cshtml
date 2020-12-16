@@ -1,0 +1,36 @@
+﻿@model Diplom.Models.Tables.Orders
+
+@{
+    ViewData["Title"] = "Appoint executors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Appoint executors</h1>
+
+<h4>Orders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AppointExecutors">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label name="CarId" class="control-label">Car</label>
+                <select name="CarId" class="form-control" asp-items="ViewBag.Car"></select>
+            </div>
+            <div class="form-group">
+                <label name="driverId" class="control-label">Driver</label>
+                <select name="driverId" class="form-control" asp-items="ViewBag.Driver"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

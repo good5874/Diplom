@@ -26,7 +26,8 @@ namespace Diplom
                 {
                     var userManager = services.GetRequiredService<UserManager<Users>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                    await RoleInitializer.InitializeAsync(userManager, rolesManager);
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    await RoleInitializer.InitializeAsync(userManager, rolesManager, context);
                 }
                 catch (Exception ex)
                 {

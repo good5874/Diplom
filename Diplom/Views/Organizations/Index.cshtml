@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Diplom.Models.Tables.Organizations>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Organizations";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,7 +16,13 @@
                 <a asp-controller="Cars" asp-action="Index">Cars |</a>
             <th>
             <th class="nav-item">
-                <a asp-controller="Employees" asp-action="Index">Employees</a>
+                <a asp-controller="Employees" asp-action="Index">Employees |</a>
+            </th>
+            <th class="nav-item">
+                <a asp-controller="Employees" asp-action="Vacancies">Vacancies |</a>
+            </th>
+            <th class="nav-item">
+                <a asp-controller="Reports" asp-action="Index">Reports</a>
             </th>
             <th></th>
         </tr>

@@ -28,8 +28,53 @@ namespace Diplom.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Employees.Include(e => e.Driver).Include(e => e.Manager).Include(e => e.User).Include(e => e.Organization);
-            return View(await applicationDbContext.ToListAsync());
+            var applicationDbContext = _context.Users
+                .Include(e => e.Employees)
+                .Include(e => e.Employees.Driver)
+                .Include(e => e.Employees.Manager)
+                .Include(e => e.Employees.Organization)
+                .Where(e=>e.Employees != null);
+
+            List<Users> tmpList = new List<Users>();
+            foreach(var user in applicationDbContext)
+            {
+                if(await _userManager.IsInRoleAsync(user, "Manager"))
+                {
+                    tmpList.Add(user);
+                }
+                else if (await _userManager.IsInRoleAsync(user, "Driver"))
+                {
+                    tmpList.Add(user);
+                }
+            }
+
+            return View(tmpList);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Vacancies()
+        {
+            var applicationDbContext = _context.Users
+                .Include(e => e.Employees)
+                .Include(e => e.Employees.Driver)
+                .Include(e => e.Employees.Manager)
+                .Include(e => e.Employees.Organization)
+                .Where(e => e.Employees != null);
+
+            List<Users> tmpList = new List<Users>();
+            foreach (var user in applicationDbContext)
+            {
+                if (!await _userManager.IsInRoleAsync(user, "Manager"))
+                {
+
+                    if (!await _userManager.IsInRoleAsync(user, "Driver"))
+                    {
+                        tmpList.Add(user);
+                    }
+                }
+            }
+
+            return View(nameof(Index), tmpList);
         }
 
         // GET: Employees/Details/5

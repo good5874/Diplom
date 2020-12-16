@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Diplom.Data;
 using Diplom.Models.Tables;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Diplom.Areas.Identity.Pages.Account.Manage
 {
@@ -14,15 +16,19 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<Users> _userManager;
         private readonly SignInManager<Users> _signInManager;
+        private readonly ApplicationDbContext _applicationDbContext;
 
         public ProfileModel(
             UserManager<Users> userManager,
-            SignInManager<Users> signInManager)
+            SignInManager<Users> signInManager,
+            ApplicationDbContext applicationDbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _applicationDbContext = applicationDbContext;
         }
 
+        [BindProperty]
         public string Username { get; set; }
 
         [TempData]
@@ -36,19 +42,25 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Display(Name = "Pasport Data")]
+            public string PasportData { get; set; }
         }
 
         private async Task LoadAsync(Users user)
         {
-            var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
-            Username = userName;
+            var Username = user.UserName;
+            var customers = _applicationDbContext.Customers.Where(c => c.Id == user.Id)
+                .FirstOrDefault();
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = user.PhoneNumber
             };
+            if (customers != null)
+            {
+                Input.PasportData = customers.PasportData;
+            }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -65,7 +77,11 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await _applicationDbContext.Users
+            .Include(e => e.Customers)
+            .FirstOrDefaultAsync(m => m.UserName == User.Identity.Name);
+
+
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -77,7 +93,26 @@ namespace Diplom.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var phoneNumber = user.PhoneNumber;
+            if(user.Customers == null)
+            {
+                await _userManager.AddToRoleAsync(user, "Customer");
+
+                user.Customers = new Customers()
+                {
+                    Id = user.Id,
+                    PasportData = Input.PasportData
+                };
+                _applicationDbContext.Add(user.Customers);
+                _applicationDbContext.SaveChanges();
+            }
+            else if(user.Customers.PasportData != Input.PasportData)
+            {
+                user.Customers.PasportData = Input.PasportData;
+                _applicationDbContext.Update(user.Customers);
+                _applicationDbContext.SaveChanges();
+            }
+
             if (Input.PhoneNumber != phoneNumber)
             {
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);

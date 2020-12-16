@@ -142,14 +142,13 @@ namespace Diplom.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            StoredProcedures.DeleteOrganization(_context, id);
-
             //var organizations = await _context.Organizations.FindAsync(id);
             //_context.Organizations.Remove(organizations);
             //await _context.SaveChangesAsync();
-            return Redirect("~/Identity/Account/Manage/Index");
 
-            //return RedirectToAction(nameof(Index));
+            StoredProcedures.DeleteOrganization(_context, id);
+
+            return RedirectToAction(nameof(Index));
         }
 
         private bool OrganizationsExists(int id)

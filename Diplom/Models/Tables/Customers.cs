@@ -14,7 +14,7 @@ namespace Diplom.Models.Tables
         public string Id { get; set; }
         public string PasportData { get; set; }
 
-        public virtual Users IdNavigation { get; set; }
+        public virtual Users User { get; set; }
         public virtual ICollection<Cargos> Cargos { get; set; }
         public virtual ICollection<Orders> Orders { get; set; }
     }

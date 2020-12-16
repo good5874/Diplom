@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Diplom.Models.Tables.Employees>
+﻿@model IEnumerable<Diplom.Models.Tables.Users>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Employees";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,31 +11,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EmploymentDate)
+                @Html.DisplayNameFor(model => model.Employees.EmploymentDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PasportData)
+                @Html.DisplayNameFor(model => model.Employees.PasportData)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
+                @Html.DisplayNameFor(model => model.Employees.DateOfBirth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Salary)
+                @Html.DisplayNameFor(model => model.Employees.Salary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.Employees.Address)
             </th>
             <th>
                 @Html.Name("Position")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.Email)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.PhoneNumber)
+                @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Organization)
+                @Html.DisplayNameFor(model => model.Employees.Organization)
             </th>
             <th></th>
         </tr>
@@ -45,21 +45,21 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EmploymentDate)
+                @Html.DisplayFor(modelItem => item.Employees.EmploymentDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PasportData)
+                @Html.DisplayFor(modelItem => item.Employees.PasportData)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
+                @Html.DisplayFor(modelItem => item.Employees.DateOfBirth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Salary)
+                @Html.DisplayFor(modelItem => item.Employees.Salary)
             </td>
             <td>
-                @Html.Name("Manager")
+                @Html.DisplayFor(modelItem => item.Employees.Address)
             </td>
-            @if (item.Driver != null)
+            @if (item.Employees.Driver != null)
             {
                 <td>
                     @Html.Name("Driver")
@@ -68,18 +68,15 @@
             else
             {
                 <td>
-                    @Html.Name(item.Manager.ToString())
+                    @Html.Name("Manager")
                 </td>
             }
             <th>
-                @Html.DisplayFor(modelItem => item.User.Email)
+                @Html.DisplayFor(modelItem => item.Email)
             </th>
             <th>
-                @Html.DisplayFor(modelItem => item.User.PhoneNumber)
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
             </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.Organization.Address)
-            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Diplom.Models.Tables.Orders>
+
+@{
+    ViewData["Title"] = "Completed contracts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reports</h1>
+
+<p>
+    <a asp-controller="Reports" asp-action="Index" class="nav-item">Completed contracts</a>
+    <a asp-controller="Reports" asp-action="OrdersInProgress" class="nav-item">Orders in progress</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo.TypeOfCargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTheContract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car.StateNamber)
+            </th>
+            <th>
+                @Html.Name("Manager email")
+            </th>
+            <th>
+                @Html.Name("Driver email")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expenses.FuelCosts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expenses.OtherExpenses)
+            </th>
+            <th>
+                @Html.Name("Profit")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo.TypeOfCargo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfTheContract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarBrand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.Employees.User.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver.Employees.User.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                @if (item.WasDelivery == true)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Expenses.FuelCosts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Expenses.OtherExpenses)
+                    </td>
+                    <td>
+                        @Html.Name((item.Cost.GetValueOrDefault() - item.Expenses.OtherExpenses - item.Expenses.FuelCosts).ToString())
+                    </td>
+                }
+                else
+                {
+                    <td></td><td></td><td></td>
+                }
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

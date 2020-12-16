@@ -1,0 +1,46 @@
+﻿@model Diplom.Models.Tables.Orders
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DateLoading" class="control-label"></label>
+                <input asp-for="DateLoading" class="form-control" />
+                <span asp-validation-for="DateLoading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateUnloading" class="control-label"></label>
+                <input asp-for="DateUnloading" class="form-control" />
+                <span asp-validation-for="DateUnloading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationLoading" class="control-label"></label>
+                <input asp-for="LocationLoading" class="form-control" />
+                <span asp-validation-for="LocationLoading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationUnloading" class="control-label"></label>
+                <input asp-for="LocationUnloading" class="form-control" />
+                <span asp-validation-for="LocationUnloading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -19,6 +19,22 @@
         <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>
     }
     <li class="nav-item"><a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor authentication</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.JobNavClass(ViewContext)" id="job" asp-page="./JobVacancy">Job</a></li>
-
+    @if(User.IsInRole("Admin"))
+    {
+    }
+    else if (User.IsInRole("Manager"))
+    {
+        <li class="nav-item"><a class="nav-link @ManageNavPages.StoreOrdersNavClass(ViewContext)" id="StoreOrders" asp-Controller="StoreOrders" asp-action="Index">Store orders</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.ManagerOrdersNavClass(ViewContext)" id="ManagerOrders" asp-Controller="ManagerOrders" asp-action="Index">My orders</a></li>
+    }
+    else if (User.IsInRole("Driver"))
+    {
+        <li class="nav-item"><a class="nav-link @ManageNavPages.DriverOrdersNavClass(ViewContext)" id="DriverOrders" asp-Controller="DriverOrders" asp-action="Index">My orders</a></li>
+    }
+    else
+    {
+        <li class="nav-item"><a class="nav-link @ManageNavPages.JobNavClass(ViewContext)" id="job" asp-page="./JobVacancy">Job</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.CargoNavClass(ViewContext)" id="cargo" asp-Controller="Cargos" asp-action="Index">My cargos</a></li>
+        <li class="nav-item"><a class="nav-link @ManageNavPages.CustoromerOrdersNavClass(ViewContext)" id="CustromerOrders" asp-Controller="CustromerOrders" asp-action="Index">My orders</a></li>
+    }
 </ul>

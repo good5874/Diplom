@@ -1,4 +1,5 @@
-﻿@model Diplom.Models.Tables.Cars
+﻿@using Diplom.ViewsModels
+@model Diplom.Models.Tables.Cars
 
 @{
     ViewData["Title"] = "Details";
@@ -8,37 +9,37 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Cars</h4>
+    <h4>Car</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StateNamber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StateNamber)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CarBrand)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CarBrand)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarringCapacity)
+        <dt class="col-sm-2">
+            @Html.Name(@UnitsModel.CarringCapacity)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CarringCapacity)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BodyVolume)
+        <dt class="col-sm-2">
+            @Html.Name(@UnitsModel.BodyVolume)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BodyVolume)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Organization)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Organization.Address)
         </dd>
     </dl>
