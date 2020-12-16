@@ -23,3 +23,25 @@
         Как заполнит, у админа в organization ---> vacancies отображаются пользователи которые заполнили формы вакансии, далее во вкладке roles нужно добавить акаунту роль.
         Новый работник готов)))
         P.S За админа также можно добавлять другие организаци и прикреплять к организациям машины. Также посмотреть прибыль по заказам и заказы которые выполняются.
+
+юзеры которые создаются вместе с базой:
+            string adminEmail = "admin1@gmail.com";
+            string password = "admin1@gmail.comQWE";
+
+            string customer1UserEmail = "1@mail.ru";
+            string customer1Password = "1@mail.ruQWE";
+
+            string customer2UserEmail = "2@mail.ru";
+            string customer2Password = "2@mail.ruQWE";
+
+            string manager1UserEmail = "manager1@mail.ru";
+            string manager1Password = "manager1@mail.ruQWE";
+
+            string manager2UserEmail = "manager2@mail.ru";
+            string manager2Password = "manager2@mail.ruQWE";
+
+            string driver1UserEmail = "driver1@mail.ru";
+            string driver1Password = "driver1@mail.ruQWE";
+
+            string driver2UserEmail = "driver2@mail.ru";
+            string driver2Password = "driver2@mail.ruQWE";
