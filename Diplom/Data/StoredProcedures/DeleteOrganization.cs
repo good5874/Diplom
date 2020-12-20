@@ -53,9 +53,5 @@ namespace Diplom.Data.StoredProcedures
 
             applicationDbContext.SaveChanges();
         }
-        public static async void DeleteOrder(ApplicationDbContext applicationDbContext, int indexDel)
-        {
-
-        }
     }
 }

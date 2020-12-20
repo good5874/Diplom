@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Diplom.Controllers.Orders_Controllers.CustromerOrdersController">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAABBgCAAAAAAAAAAAEAAEACAAEABAAAAAA=</HashCode>
+      <FileName>Controllers\Orders_Controllers\CustromerOrdersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.Orders_Controllers.DriverOrdersController">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAABAA=</HashCode>
+      <FileName>Controllers\Orders_Controllers\DriverOrdersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.Orders_Controllers.ManagerOrdersController">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBACAAAAAAEAAAAEAAAAAAAEABAAQAAA=</HashCode>
+      <FileName>Controllers\Orders_Controllers\ManagerOrdersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.Orders_Controllers.StoreOrdersController">
+    <Position X="4.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAIAAA=</HashCode>
+      <FileName>Controllers\Orders_Controllers\StoreOrdersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.CargosController">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABBBACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CargosController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.CarsController">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBgCAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CarsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.EmployeesController">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAABCAABAABBACAAAAAAAAAAAEAAEACAAEAAIAAAAA=</HashCode>
+      <FileName>Controllers\EmployeesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.HomeController">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.OrganizationsController">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBACAAAQAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrganizationsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.ReportsController">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABBAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ReportsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Controllers.RolesController">
+    <Position X="2.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAAAAAAAAAAAAAAAAAAgAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\RolesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Data.Migrations.ApplicationDbContextModelSnapshot">
+    <Position X="13" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Data\Migrations\ApplicationDbContextModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Data.StoredProcedures.StoredProcedures">
+    <Position X="13" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\StoredProcedures\DeleteOrganization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Data.ApplicationDbContext">
+    <Position X="10.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAEAACACAQAAAABAAAAgAAAAGAAAAAABAQAAAAAAAAA=</HashCode>
+      <FileName>Data\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Data.RoleInitializer">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\RoleInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Cargos">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgkCAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Tables\Cargos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Cars">
+    <Position X="12.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAAAAAAAAAQAYAAIAAAAAABAAIAA=</HashCode>
+      <FileName>Models\Tables\Cars.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Customers">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEDAAAAAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tables\Customers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Drivers">
+    <Position X="17" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAAIABAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Tables\Drivers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Employees">
+    <Position X="10.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADACAAAAAAACEAAAAAAAAAAQAQhAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\Tables\Employees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Expenses">
+    <Position X="14.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tables\Expenses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Managers">
+    <Position X="17" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Tables\Managers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Orders">
+    <Position X="10.5" Y="12.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AglCAAQEAAQAIACAAAAIEBCAAAAAhBARAQAAAAAAAEA=</HashCode>
+      <FileName>Models\Tables\Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Organizations">
+    <Position X="12.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAACACAAAAAAAAAAAAQACAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tables\Organizations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.Tables.Users">
+    <Position X="14.75" Y="14" Width="2" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Identity.IdentityUser" ManuallyRouted="true">
+      <Path>
+        <Point X="15.875" Y="13.483" />
+        <Point X="15.875" Y="13.362" />
+        <Point X="15.75" Y="13.362" />
+        <Point X="15.75" Y="14" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Tables\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Models.ErrorViewModel">
+    <Position X="12.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Program">
+    <Position X="6" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.Startup">
+    <Position X="8" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.ViewsModels.ChangeRoleViewModel">
+    <Position X="0.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAgAAAAAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>ViewsModels\ChangeRoleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diplom.ViewsModels.UnitsModel">
+    <Position X="2.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAIAABAACAA=</HashCode>
+      <FileName>ViewsModels\UnitsModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.IdentityUser">
+    <Position X="14.75" Y="12.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
