@@ -47,4 +47,5 @@
             string driver2UserEmail = "driver2@mail.ru";
             string driver2Password = "driver2@mail.ruQWE";
             
-            в appsettings, при форке поменяйте строку подключения к базе на свою
+            в appsettings, при форке поменяйте строку подключения к базе на свою 
+            в ApplicationDbContext сделать  тоже самое
